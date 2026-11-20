@@ -3,41 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>L00213552 Task assignment</title>
-  <style>
-    body {
-      align-items: center;
-      background-color: #f4f7fb;
-      color: #1f2937;
-      display: flex;
-      font-family: Arial, sans-serif;
-      justify-content: center;
-      margin: 0;
-      min-height: 100vh;
-    }
-
-    main {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      padding: 2rem;
-      text-align: center;
-      width: 80%;
-    }
-
-    h1 {
-      color: #2563eb;
-      margin-top: 0;
-    }
-  </style>
+  <meta
+    name="description"
+    content="A Node.js and Express Task Manager created for the L00213552 CI/CD pipeline assignment."
+  >
+  <title>L00213552 Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <h1>L00213552 Task assignment</h1> 
-    <p>Node.js and Express CI/CD Pipeline Project</p>
-    <p>The application is running successfully.</p>
+  <main class="app-container">
+    <header class="app-header">
+      <p class="project-label">DevOps in Action</p>
+      <h1>L00213552 Task Manager</h1>
+      <p>
+        A Node.js and Express web application developed to demonstrate
+        a complete CI/CD pipeline.
+      </p>
+    </header>
+
+    <section class="task-panel" aria-labelledby="task-heading">
+      <h2 id="task-heading">My Tasks</h2>
+
+      <form id="task-form">
+        <label for="task-title">New task</label>
+
+        <div class="form-row">
+          <input
+            id="task-title"
+            name="title"
+            type="text"
+            maxlength="100"
+            placeholder="Enter a task"
+            required
+          >
+          <button type="submit">Add Task</button>
+        </div>
+
+        <p id="form-message" class="message" aria-live="polite"></p>
+      </form>
+
+      <div class="task-summary">
+        <span id="task-count">0 tasks</span>
+        <span id="completed-count">0 completed</span>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+
+      <p id="empty-message" class="empty-message">
+        No tasks have been added yet.
+      </p>
+    </section>
+
+    <footer>
+      <p>Student ID: L00213552 | Task 3 CI/CD Pipeline</p>
+    </footer>
   </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
 
