@@ -1,0 +1,15 @@
+services:
+  task-manager:
+    build:
+      context: .
+      target: production
+    image: l00213552-task-3:1.0
+    container_name: l00213552-task-3-compose
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
