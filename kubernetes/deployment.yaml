@@ -22,7 +22,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: task-manager
-          image: maxamed4real/l00213552-task-3:1.0
+          image: maxamed4real/l00213552-task-3:1.1
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
@@ -47,7 +47,7 @@ spec:
             readOnlyRootFilesystem: true
           readinessProbe:
             httpGet:
-              path: /api/tasks
+              path: /health
               port: http
             initialDelaySeconds: 5
             periodSeconds: 10
@@ -55,7 +55,7 @@ spec:
             failureThreshold: 3
           livenessProbe:
             httpGet:
-              path: /api/tasks
+              path: /health
               port: http
             initialDelaySeconds: 10
             periodSeconds: 15
