@@ -30,6 +30,7 @@ RUN npm ci --omit=dev --ignore-scripts \
     && npm cache clean --force
 
 COPY --from=test --chown=node:node /app/src ./src
+COPY --chown=node:node public ./public
 
 USER node
 
